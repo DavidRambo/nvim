@@ -335,7 +335,8 @@ local servers = {
     pylsp = {
       plugins = {
         black = { enabled = true },
-        -- TODO: Swap out for ruff_lsp
+        -- disable linting in favor of ruff_lsp
+        mccabe = { enabled = false },
         pycodestyle = {
           enabled = false,
           -- ignore = { "W391", "E226", "E501" },
