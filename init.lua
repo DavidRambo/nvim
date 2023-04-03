@@ -255,6 +255,15 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
+vim.diagnostic.config({
+  -- virtual_text = {
+  --   source = "always", -- Or "if_many"
+  -- },
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
