@@ -9,17 +9,17 @@ return {
 			require("catppuccin").setup({
 				flavour = "macchiato", -- latte, frappe, macchiato, mocha
 				background = {
-				-- :h background
+					-- :h background
 					light = "latte",
 					dark = "macchiato",
 				},
 				transparent_background = false,
 				show_end_of_buffer = false, -- show the '~' after the end of buffers
-				dim_inactive = {
-					enabled = true,
-					shade = "dark",
-					percentage = 0.15,
-				},
+				-- dim_inactive = {
+				-- 	enabled = true,
+				-- 	shade = "dark",
+				-- 	percentage = 0.25,
+				-- },
 				no_italic = false, -- Force no italic
 				no_bold = false, -- Force no bold
 				styles = {
