@@ -11,6 +11,7 @@ return {
 				nls.builtins.formatting.stylua,
 				nls.builtins.formatting.black,
 				nls.builtins.formatting.shfmt,
+				nls.builtins.formatting.sql_formatter,
 			},
 		}
 	end,
