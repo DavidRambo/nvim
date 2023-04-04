@@ -1,5 +1,5 @@
 return {
-	'folke/which-key.nvim',
+	"folke/which-key.nvim",
 	opts = {},
 	config = function()
 		local wk = require("which-key")
@@ -9,6 +9,7 @@ return {
 			["<leader>c"] = { name = "+comment" },
 			["<leader>f"] = { name = "+file/find" },
 			["g"] = { name = "+goto" },
+			["gS"] = { "Splitjoin" },
 			-- ["<leader>gg"] = {
 			-- 	name = "Neogit",
 			-- 	g = { "Open Neo[g]it" },
