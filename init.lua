@@ -35,11 +35,6 @@ require("lazy").setup({
   },
 
   {
-    "numToStr/Comment.nvim",
-    event = "VeryLazy",
-  },
-
-  {
     "RRethy/vim-illuminate",
     config = function()
       require("illuminate").configure({
