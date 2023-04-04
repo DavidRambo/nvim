@@ -61,35 +61,34 @@ require("lazy").setup({
   -- "gc" to comment visual regions/lines
   {
     "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup({
-        ignore = "^$",
-        toggler = {
-          line = "<leader>cc",
-          block = "<leader>cb",
-        },
-        opleader = {
-          line = "<leader>c",
-          block = "<leader>b",
-        },
-        extra = {
-          -- Add comment on the line above
-          above = "<leader>cO",
-          -- Add comment on the line below
-          below = "<leader>co",
-          -- Add comment at the end of line
-          eol = "<leader>ca",
-        },
-        -- Enable keybindings
-        -- Note: If given `false` then the plugin won't create any mappings
-        mappings = {
-          -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-          basic = true,
-          -- Extra mapping; `gco`, `gcO`, `gcA`
-          extra = true,
-        },
-      })
-    end,
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      ignore = "^$",
+      toggler = {
+        line = "<leader>cc",
+        block = "<leader>cb",
+      },
+      opleader = {
+        line = "<leader>c",
+        block = "<leader>b",
+      },
+      extra = {
+        -- Add comment on the line above
+        above = "<leader>cO",
+        -- Add comment on the line below
+        below = "<leader>co",
+        -- Add comment at the end of line
+        eol = "<leader>ca",
+      },
+      -- Enable keybindings
+      -- Note: If given `false` then the plugin won't create any mappings
+      mappings = {
+        -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+        basic = true,
+        -- Extra mapping; `gco`, `gcO`, `gcA`
+        extra = true,
+      },
+    },
   },
 
   -- Detect tabstop and shiftwidth automatically
