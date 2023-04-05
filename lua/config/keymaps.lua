@@ -87,7 +87,7 @@ n_remap("<leader>wi", "<C-w><Right>")
 n_remap("<leader>wu", "<C-w><Up>")
 n_remap("<leader>we", "<C-w><Down>")
 n_remap("<leader>wb", "<C-w>=")
-n_remap("<leader>wo", ":only")
+n_remap("<leader>wo", ":only<CR>")
 n_remap("<leader>wc", ":close<CR>")
 
 -- See `:help telescope.builtin`
