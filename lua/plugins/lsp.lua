@@ -23,6 +23,7 @@ return {
 				float = {
 					source = "always",
 				},
+				virtual_text = false,
 			},
 			autoformat = true,
 			servers = {
