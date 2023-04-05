@@ -1,6 +1,5 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	event = "VeryLazy",
 	config = function()
 		require("lualine").setup({
 			options = {
@@ -15,7 +14,12 @@ return {
 				},
 				-- lualine_b = { "filename", "branch" },
 				lualine_c = { "fileformat" },
-				lualine_x = {},
+				lualine_x = {
+					{
+						require("lazy.status").updates,
+						cond = require("lazy.status").has_updates,
+					},
+				},
 				lualine_y = { "filetype", "progress" },
 				lualine_z = {
 					{ "location", separator = { right = "" }, left_padding = 2 },
