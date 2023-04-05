@@ -51,6 +51,14 @@ require("lazy").setup({
   },
 
   {
+    "folke/todo-comments.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  },
+
+  {
     "ggandor/leap.nvim",
     event = "VeryLazy",
     config = function()
