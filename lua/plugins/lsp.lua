@@ -48,11 +48,7 @@ return {
         -- 		},
         -- 	},
         -- },
-        jedi_language_server = {
-          init_options = {
-            diagnostics = { enable = false },
-          },
-        },
+        jedi_language_server = {}, -- To ensure installation.
         ruff_lsp = {},
         lua_ls = {
           Lua = {
@@ -132,6 +128,14 @@ return {
             settings = opts.servers[server_name],
           })
         end,
+      })
+
+      -- Moved out of mason_lspconfig handlers loop because diagnostics
+      -- were not being disabled.
+      require("lspconfig").jedi_language_server.setup({
+        init_options = {
+          diagnostics = { enable = false },
+        },
       })
     end,
   },
