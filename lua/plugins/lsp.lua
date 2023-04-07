@@ -48,7 +48,11 @@ return {
 				-- 		},
 				-- 	},
 				-- },
-				jedi_language_server = {},
+				jedi_language_server = {
+					init_options = {
+						diagnostics = { enable = false },
+					},
+				},
 				ruff_lsp = {},
 				lua_ls = {
 					Lua = {
