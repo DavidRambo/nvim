@@ -103,9 +103,9 @@ return {
 
 					-- Tsserver usually works poorly. Sorry you work with bad languages
 					-- You can remove this line if you know what you're doing :)
-					if client.name == "tsserver" then
-						return
-					end
+					-- if client.name == "tsserver" then
+					-- 	return
+					-- end
 
 					-- Create an autocmd that will run *before* we save the buffer.
 					--  Run the formatting command for the LSP that has just attached.
@@ -127,9 +127,12 @@ return {
 					})
 				end,
 			})
-			local on_attach = function(_, bufnr)
-				-- Attach the server to Navbuddy
-				require("nvim-navbuddy").attach(_, bufnr)
+			local on_attach = function(client, bufnr)
+				-- Attach the server to Navbuddy only if server is not ruff_lsp.
+				-- ruff_lsp does not support documentSymbols.
+				if client.name ~= "ruff_lsp" then
+					require("nvim-navbuddy").attach(client, bufnr)
+				end
 
 				-- In this case, we create a function that lets us more easily define mappings specific
 				-- for LSP related items. It sets the mode, buffer and description for us each time.
