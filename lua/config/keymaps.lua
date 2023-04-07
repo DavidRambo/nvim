@@ -85,6 +85,9 @@ n_remap("<leader>wb", "<C-w>=")
 n_remap("<leader>wo", ":only<CR>")
 n_remap("<leader>wc", ":close<CR>")
 
+-- Open Lazy UI
+n_remap("<leader>cl", "<cmd>Lazy<CR>", "Lazy")
+
 -- See `:help telescope.builtin`
 vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "[F]ind [R]ecently opened files" })
 vim.keymap.set("n", "<leader>/", function()
