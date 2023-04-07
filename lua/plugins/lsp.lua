@@ -32,23 +32,23 @@ return {
 				-- pyright = {},
 				-- rust_analyzer = {},
 				-- tsserver = {},
-				pylsp = {
-					pylsp = {
-						plugins = {
-							black = { enabled = true },
-							-- disable linting in favor of ruff_lsp
-							mccabe = { enabled = false },
-							pycodestyle = {
-								enabled = false,
-								-- ignore = { "W391", "E226", "E501" },
-								-- maxLineLength = 88,
-							},
-							-- TODO: Add black
-							pyflakes = { enabled = false },
-							pylint = { enabled = false },
-						},
-					},
-				},
+				-- pylsp = {
+				-- 	pylsp = {
+				-- 		plugins = {
+				-- 			black = { enabled = true },
+				-- 			-- disable linting in favor of ruff_lsp
+				-- 			mccabe = { enabled = false },
+				-- 			pycodestyle = {
+				-- 				enabled = false,
+				-- 				-- ignore = { "W391", "E226", "E501" },
+				-- 				-- maxLineLength = 88,
+				-- 			},
+				-- 			pyflakes = { enabled = false },
+				-- 			pylint = { enabled = false },
+				-- 		},
+				-- 	},
+				-- },
+				jedi_language_server = {},
 				ruff_lsp = {},
 				lua_ls = {
 					Lua = {
