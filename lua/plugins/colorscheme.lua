@@ -44,8 +44,11 @@ return {
 					illuminate = true,
 					leap = true,
 					mason = true,
+					mini = true,
+					neogit = true,
 					nvimtree = true,
 					telescope = true,
+					treesitter = true,
 					-- notify = false,
 					-- mini = false,
 					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
