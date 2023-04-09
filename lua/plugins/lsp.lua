@@ -1,7 +1,4 @@
 return {
-
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
@@ -12,10 +9,10 @@ return {
       "williamboman/mason-lspconfig.nvim",
 
       -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      -- Note: `opts = {}` is the same as calling `require('fidget').setup({})`
       { "j-hui/fidget.nvim", opts = {} },
 
-      -- Additional lua configuration, makes nvim stuff amazing!
+      -- Additional lua configuration. Setup defore setting up lspconfig for lua_ls.
       "folke/neodev.nvim",
     },
     opts = {
@@ -51,11 +48,12 @@ return {
         -- jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
         ruff_lsp = {},
         lua_ls = {
-          Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
+            Lua = {
+              format = { enable = false},
+              workspace = { checkThirdParty = false },
+              telemetry = { enable = false },
+            },
           },
-        },
       },
     },
     config = function(_, opts)
@@ -66,8 +64,6 @@ return {
           require("nvim-navbuddy").attach(client, bufnr)
         end
 
-        -- In this case, we create a function that lets us more easily define mappings specific
-        -- for LSP related items. It sets the mode, buffer and description for us each time.
         local nmap = function(keys, func, desc)
           if desc then
             desc = "LSP: " .. desc
