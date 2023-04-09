@@ -13,7 +13,8 @@ return {
 					{ "filename", "branch", separator = { left = "" }, right_padding = 2 },
 				},
 				-- lualine_b = { "filename", "branch" },
-				lualine_c = { "fileformat" },
+				-- lualine_c = { "fileformat" },
+				lualine_c = {},
 				lualine_x = {
 					{
 						require("lazy.status").updates,
