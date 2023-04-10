@@ -48,12 +48,12 @@ return {
         -- jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
         ruff_lsp = {},
         lua_ls = {
-            Lua = {
-              format = { enable = false},
-              workspace = { checkThirdParty = false },
-              telemetry = { enable = false },
-            },
+          Lua = {
+            format = { enable = false },
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
           },
+        },
       },
     },
     config = function(_, opts)
@@ -100,6 +100,9 @@ return {
         end, { desc = "Format current buffer with LSP" })
         nmap("<leader>bf", "<cmd>Format<CR>", "[B]uffer [F]ormat")
       end
+
+      -- Add a border to the hover frame.
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
       require("neodev").setup()
 
