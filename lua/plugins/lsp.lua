@@ -14,6 +14,9 @@ return {
 
       -- Additional lua configuration. Setup defore setting up lspconfig for lua_ls.
       "folke/neodev.nvim",
+
+      -- Hover guide for function signatures.
+      "ray-x/lsp_signature.nvim",
     },
     opts = {
       diagnostics = {
@@ -104,6 +107,16 @@ return {
       -- Add a border to the hover frame.
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
+      require("lsp_signature").on_attach({
+        bind = true, -- This is mandatory, otherwise border config won't get registered.
+        handler_opts = {
+          border = "rounded",
+        },
+        hint_enable = false,
+        hint_prefix = "",
+      })
+      -- , bufnr) -- bufnr only required when using toggle_key function
+
       require("neodev").setup()
 
       vim.diagnostic.config(opts.diagnostics)
@@ -149,6 +162,7 @@ return {
     opts = {
       ensure_installed = {
         "black",
+        "mypy",
         "stylua",
         "shfmt",
       },
