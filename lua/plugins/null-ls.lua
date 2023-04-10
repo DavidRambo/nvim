@@ -8,10 +8,13 @@ return {
       -- next line is from LazyVim. Saving it as a comment in case it is useful for later.
       -- root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
       sources = {
+        -- Sources are "ensure_installed" with mason in lua/plugins/lsp.lua
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.black,
         nls.builtins.formatting.shfmt,
         nls.builtins.formatting.sql_formatter,
+        -- Diagnostics
+        nls.builtins.diagnostics.mypy,
       },
       -- configure format on save
       on_attach = function(current_client, bufnr)
