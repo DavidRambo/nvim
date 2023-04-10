@@ -14,7 +14,7 @@ return {
         nls.builtins.formatting.shfmt,
         nls.builtins.formatting.sql_formatter,
         -- Diagnostics
-        nls.builtins.diagnostics.mypy,
+        -- nls.builtins.diagnostics.mypy,
       },
       -- configure format on save
       on_attach = function(current_client, bufnr)

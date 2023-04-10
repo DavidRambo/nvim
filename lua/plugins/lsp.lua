@@ -162,7 +162,7 @@ return {
     opts = {
       ensure_installed = {
         "black",
-        "mypy",
+        -- "mypy",
         "stylua",
         "shfmt",
       },
