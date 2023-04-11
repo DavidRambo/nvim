@@ -1,10 +1,10 @@
 -- For conciseness
 local n_remap = function(lhs, rhs, desc)
-    vim.keymap.set("n", lhs, rhs, { silent = true, desc = desc })
+  vim.keymap.set("n", lhs, rhs, { silent = true, desc = desc })
 end
 
 local i_remap = function(lhs, rhs)
-    vim.keymap.set("i", lhs, rhs, { silent = true })
+  vim.keymap.set("i", lhs, rhs, { silent = true })
 end
 
 -- Keymaps for better default experience
@@ -19,19 +19,19 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })
 
 vim.api.nvim_set_keymap("n", "<Up>", "v:count == 0 ? 'g<Up>' : '<Up>'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap(
-    "n",
-    "<Down>",
-    "v:count == 0 ? 'g<Down>' : '<Down>'",
-    { noremap = true, expr = true, silent = true }
+  "n",
+  "<Down>",
+  "v:count == 0 ? 'g<Down>' : '<Down>'",
+  { noremap = true, expr = true, silent = true }
 )
 
 -- n_remap("<C-d>", "<C-d>zz")
@@ -91,11 +91,11 @@ n_remap("<leader>cl", "<cmd>Lazy<CR>", "Lazy")
 -- See `:help telescope.builtin`
 vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "[F]ind [R]ecently opened files" })
 vim.keymap.set("n", "<leader>/", function()
-    -- You can pass additional configuration to telescope to change theme, layout, etc.
-    require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        winblend = 10,
-        previewer = false,
-    }))
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    winblend = 10,
+    previewer = false,
+  }))
 end, { desc = "[/] Fuzzily search in current buffer" })
 
 vim.keymap.set("n", "<leader>.", "<cmd>:lua require('config.tele').file_finder()<CR>", { desc = "Find Files" })
@@ -103,19 +103,19 @@ vim.keymap.set("n", "<leader>,", "<cmd>:Telescope buffers<CR>")
 n_remap("<leader>fb", ":Telescope file_browser path=%:p:h<CR>", "[F]ile [B]rowser")
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
 vim.keymap.set(
-    "n",
-    "<leader>fp",
-    "<cmd>:lua require('config.tele').edit_nvim_conf()<CR>",
-    { desc = "Neovim Config Files" }
+  "n",
+  "<leader>fp",
+  "<cmd>:lua require('config.tele').edit_nvim_conf()<CR>",
+  { desc = "Neovim Config Files" }
 )
 vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
 vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
 vim.keymap.set("n", "<leader>sp", require("telescope.builtin").live_grep, { desc = "[S]earch [P]roject by grep" })
 vim.keymap.set(
-    "n",
-    "<leader>sb",
-    require("telescope.builtin").current_buffer_fuzzy_find,
-    { desc = "[S]earch [B]uffer" }
+  "n",
+  "<leader>sb",
+  require("telescope.builtin").current_buffer_fuzzy_find,
+  { desc = "[S]earch [B]uffer" }
 )
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>sk", "<cmd>Telescope keymaps<CR>", { desc = "[S]earch [K]eymaps" })
