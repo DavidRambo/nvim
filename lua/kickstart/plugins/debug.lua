@@ -1,16 +1,7 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
+-- lua/kickstart/plugins/debug.lua
 return {
-  -- NOTE: Yes, you can install new plugins here!
   "mfussenegger/nvim-dap",
 
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
     "rcarriga/nvim-dap-ui",
@@ -19,8 +10,7 @@ return {
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
 
-    -- Add your own debuggers here
-    "leoluz/nvim-dap-go",
+    "HiPhish/debugpy.nvim"
   },
 
   config = function()
@@ -32,25 +22,22 @@ return {
       -- reasonable debug configurations
       automatic_setup = true,
 
-      -- You'll need to check that you have the required things installed
-      -- online, please don't ask me how to install them :)
+      -- You can provide additional configuration to the handlers,
+      -- see mason-nvim-dap README for more information
+      handlers = {},
+
       ensure_installed = {
-        -- Update this to ensure that you have the debuggers for the langs you want
-        "delve",
+        "debugpy",
       },
     })
-
-    -- You can provide additional configuration to the handlers,
-    -- see mason-nvim-dap README for more information
-    require("mason-nvim-dap").setup_handlers()
 
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set("n", "<F5>", dap.continue)
     vim.keymap.set("n", "<F1>", dap.step_into)
     vim.keymap.set("n", "<F2>", dap.step_over)
     vim.keymap.set("n", "<F3>", dap.step_out)
-    vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-    vim.keymap.set("n", "<leader>B", function()
+    vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+    vim.keymap.set("n", "<leader>dB", function()
       dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
     end)
 
@@ -79,7 +66,13 @@ return {
     dap.listeners.before.event_terminated["dapui_config"] = dapui.close
     dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
-    -- Install golang specific config
-    require("dap-go").setup()
+    -- require("debugpy").setup()
+    require("dap").adapters.python = {
+      {
+    type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
+    request = 'launch';
+    name = "Launch file";
+      }
+    }
   end,
 }
