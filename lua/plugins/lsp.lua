@@ -87,7 +87,8 @@ return {
 
         -- See `:help K` for why this keymap
         nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-        nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+        vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Signature Help" })
+        -- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
         -- Lesser used LSP functionality
         nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -107,14 +108,14 @@ return {
       -- Add a border to the hover frame.
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-      require("lsp_signature").on_attach({
-        bind = true, -- This is mandatory, otherwise border config won't get registered.
-        handler_opts = {
-          border = "rounded",
-        },
-        hint_enable = false,
-        hint_prefix = "",
-      })
+      -- require("lsp_signature").on_attach({
+      --   bind = true, -- This is mandatory, otherwise border config won't get registered.
+      --   handler_opts = {
+      --     border = "rounded",
+      --   },
+      --   hint_enable = false,
+      --   hint_prefix = "",
+      -- })
       -- , bufnr) -- bufnr only required when using toggle_key function
 
       require("neodev").setup()
