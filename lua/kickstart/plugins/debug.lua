@@ -10,7 +10,7 @@ return {
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
 
-    "HiPhish/debugpy.nvim"
+    "HiPhish/debugpy.nvim",
   },
 
   config = function()
@@ -32,14 +32,15 @@ return {
     })
 
     -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set("n", "<F5>", dap.continue)
-    vim.keymap.set("n", "<F1>", dap.step_into)
-    vim.keymap.set("n", "<F2>", dap.step_over)
-    vim.keymap.set("n", "<F3>", dap.step_out)
-    vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+    vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue" })
+    vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step Into" })
+    vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step Over" })
+    vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "Step Out" })
+    vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Breakpoint" })
     vim.keymap.set("n", "<leader>dB", function()
       dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-    end)
+    end, { desc = "Breakpoint condition" })
+    vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "REPL" })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
@@ -69,10 +70,11 @@ return {
     -- require("debugpy").setup()
     require("dap").adapters.python = {
       {
-    type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
-    request = 'launch';
-    name = "Launch file";
-      }
+        type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+        request = "launch",
+        name = "Launch file",
+        program = "${file}", -- launch the current file
+      },
     }
   end,
 }

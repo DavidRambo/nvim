@@ -121,7 +121,7 @@ require("lazy").setup({
   },
 
   -- require("kickstart.plugins.autoformat"),
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   { import = "plugins" },
 }, {})
 
