@@ -39,7 +39,7 @@ require("lazy").setup({
       require("illuminate").configure({
         filetypes_denylist = {
           "dirvish",
-          "figitive",
+          "fugitive",
           "md",
           "org",
           "norg",
