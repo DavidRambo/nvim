@@ -10,9 +10,10 @@ return {
       },
       sections = {
         lualine_a = {
-          { "filename", "branch", separator = { left = "" }, right_padding = 2 },
+          { "branch", separator = { left = "" }, right_padding = 2 },
         },
-        -- lualine_b = { "filename", "branch" },
+        lualine_b = { "diff", { "filename", file_status = true, path = 1 }, },
+        -- lualine_c = { { "filename", file_status = true, path = 1 } },
         -- lualine_c = { "fileformat" },
         lualine_c = {},
         lualine_x = {
