@@ -25,14 +25,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Editor related plugins
   {
-    "windwp/nvim-autopairs",
-    event = "VeryLazy",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
-  },
-
-  {
     "RRethy/vim-illuminate",
     event = "VeryLazy",
     config = function()
