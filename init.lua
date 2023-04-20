@@ -50,7 +50,7 @@ require("lazy").setup({
 
   {
     "ggandor/leap.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     config = function()
       require("leap").add_default_mappings()
     end,
