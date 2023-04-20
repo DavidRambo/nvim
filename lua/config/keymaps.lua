@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 n_remap("Q", "<nop>")
 
 -- map save to doom emacs bindings
-n_remap("<leader>fs", ":w<CR>")
+n_remap("<leader>fs", ":w<CR>", "[F]ile [S]ave")
 
 -- Emacs Home and End bindings
 i_remap("<C-a>", "<ESC>I")
