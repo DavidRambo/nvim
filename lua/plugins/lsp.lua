@@ -27,7 +27,7 @@ return {
       },
       -- autoformat = true,
       servers = {
-        clangd = {},
+        -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -152,6 +152,17 @@ return {
           diagnostics = { enable = false },
         },
       })
+
+      -- Workaround for warning when using clang-format (via null-ls) with clangd lsp.
+      capabilities.offsetEncoding = { "utf-16" }
+
+      require("lspconfig").clangd.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        init_options = {
+          diagnostics = { enable = false },
+        },
+      })
     end,
   },
 
@@ -163,6 +174,7 @@ return {
     opts = {
       ensure_installed = {
         "black",
+        "clang-format",
         -- "mypy",
         "stylua",
         "shfmt",
