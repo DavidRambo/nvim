@@ -3,7 +3,6 @@ return {
   version = "*",
   lazy = false,
   keys = {
-
     { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "NvimTree" },
   },
   dependencies = {
