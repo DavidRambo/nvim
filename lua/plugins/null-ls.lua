@@ -9,6 +9,7 @@ return {
       -- root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
       sources = {
         -- Sources are "ensure_installed" with mason in lua/plugins/lsp.lua
+        nls.builtins.formatting.clang_format,
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.black,
         nls.builtins.formatting.shfmt,
