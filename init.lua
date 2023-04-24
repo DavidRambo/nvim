@@ -25,22 +25,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Editor related plugins
   {
-    "RRethy/vim-illuminate",
-    event = "VeryLazy",
-    config = function()
-      require("illuminate").configure({
-        filetypes_denylist = {
-          "dirvish",
-          "fugitive",
-          "md",
-          "org",
-          "norg",
-        },
-      })
-    end,
-  },
-
-  {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
     config = function()
