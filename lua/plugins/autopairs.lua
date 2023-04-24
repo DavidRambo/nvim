@@ -12,6 +12,8 @@ return {
       Rule("{{", "  }", "html", "vue"):set_end_pair_length(2):with_pair(ts_conds.is_ts_node("text")),
 
       Rule("{%", "  %", "html"):set_end_pair_length(2),
+
+      -- Rule("{", "  }", "lua"):set_end_pair_length(2),
     })
   end,
 }
