@@ -23,6 +23,9 @@ return {
       filters = {
         dotfiles = true,
       },
+      view = {
+        side = "right",
+      },
     })
   end,
 }
