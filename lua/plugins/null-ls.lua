@@ -14,6 +14,7 @@ return {
         nls.builtins.formatting.black,
         nls.builtins.formatting.shfmt,
         nls.builtins.formatting.sql_formatter,
+        -- nls.builtins.formatting.prettier,
         -- Diagnostics
         -- nls.builtins.diagnostics.mypy,
       },
