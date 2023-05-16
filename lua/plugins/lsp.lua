@@ -57,6 +57,7 @@ return {
             telemetry = { enable = false },
           },
         },
+        html = {},
       },
     },
     config = function(_, opts)
