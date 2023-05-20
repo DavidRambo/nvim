@@ -12,12 +12,18 @@ return {
     require("nvim-tree").setup({
       renderer = {
         icons = {
-          glyphs = {
-            folder = {
-              arrow_closed = "﬌",
-              arrow_open = "",
-            },
+          show = {
+            folder = true,
           },
+          -- glyphs = {
+          --   folder = {
+          --     arrow_closed = "﬌",
+          --     arrow_open = "",
+          --   },
+          -- },
+        },
+        indent_markers = {
+          enable = false,
         },
       },
       filters = {
