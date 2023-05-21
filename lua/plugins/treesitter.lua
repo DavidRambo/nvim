@@ -14,6 +14,7 @@ return {
       "java",
       "lua",
       "python",
+      "scheme",
       "vim",
       "vimdoc",
       "html",
