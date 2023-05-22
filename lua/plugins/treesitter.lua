@@ -6,6 +6,7 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "windwp/nvim-ts-autotag",
   },
   opts = {
     -- Add languages to be installed here that you want installed for treesitter
@@ -32,6 +33,9 @@ return {
         node_decremental = "<M-space>",
       },
     },
+    -- autotag = {
+    --   enable = true,
+    -- },
     textobjects = {
       select = {
         enable = true,
