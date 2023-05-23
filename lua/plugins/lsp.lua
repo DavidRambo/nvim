@@ -177,6 +177,7 @@ return {
         "black",
         "clang-format",
         -- "mypy",
+        "prettierd",
         "stylua",
         "shfmt",
       },
