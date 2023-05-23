@@ -15,10 +15,13 @@ return {
       "java",
       "lua",
       "python",
+      "json",
       "scheme",
       "vim",
       "vimdoc",
       "html",
+      "css",
+      "yaml",
     },
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
