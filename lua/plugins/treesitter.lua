@@ -33,9 +33,9 @@ return {
         node_decremental = "<M-space>",
       },
     },
-    -- autotag = {
-    --   enable = true,
-    -- },
+    autotag = {
+      enable = true,
+    },
     textobjects = {
       select = {
         enable = true,
