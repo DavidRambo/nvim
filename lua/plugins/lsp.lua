@@ -58,6 +58,7 @@ return {
           },
         },
         html = {},
+        cssls = {},
       },
     },
     config = function(_, opts)
