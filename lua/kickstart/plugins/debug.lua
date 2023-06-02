@@ -1,5 +1,5 @@
 -- lua/kickstart/plugins/debug.lua
-return {
+M = {
   "mfussenegger/nvim-dap",
 
   dependencies = {
@@ -78,3 +78,5 @@ return {
     }
   end,
 }
+-- return M
+return {}
