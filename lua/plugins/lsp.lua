@@ -66,7 +66,7 @@ return {
       local on_attach = function(client, bufnr)
         -- Attach the server to Navbuddy only if server is not ruff_lsp.
         -- ruff_lsp does not support documentSymbols.
-        if client.name ~= "ruff_lsp" then
+        if client.name ~= "ruff_lsp" and client.name ~= "tailwindcss" then
           require("nvim-navbuddy").attach(client, bufnr)
         end
 
@@ -180,6 +180,7 @@ return {
         "clang-format",
         -- "mypy",
         "prettierd",
+        "sql-formatter",
         "stylua",
         "shfmt",
       },
