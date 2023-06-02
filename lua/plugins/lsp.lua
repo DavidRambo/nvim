@@ -59,6 +59,7 @@ return {
         },
         html = {},
         cssls = {},
+        tailwindcss = {},
       },
     },
     config = function(_, opts)
