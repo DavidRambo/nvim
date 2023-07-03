@@ -10,7 +10,11 @@ return {
 
       -- Useful status updates for LSP
       -- Note: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { "j-hui/fidget.nvim", opts = {} },
+      {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        opts = {},
+      },
 
       -- Additional lua configuration. Setup defore setting up lspconfig for lua_ls.
       "folke/neodev.nvim",
