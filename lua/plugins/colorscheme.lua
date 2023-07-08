@@ -37,7 +37,22 @@ return {
           operators = {},
         },
         color_overrides = {},
-        custom_highlights = {},
+        -- custom_highlights = {},
+        -- Below inspired by github.com/nekowinston's config
+        highlight_overrides = {
+          all = function(colors)
+            return {
+              FloatBorder = { fg = colors.mauve },
+              TelescopeBorder = { link = "FloatBorder" },
+              TelescopeTitle = { fg = colors.text },
+              TelescopeSelection = { fg = colors.teal },
+              NvimTreeWinSeparator = { link = "FloatBorder" },
+              WhickKeyBorder = { link = "FloatBorder" },
+              FidgetTitle = { fg = colors.teal },
+              FidgetTask = { fg = colors.teal },
+            }
+          end,
+        },
         integrations = {
           cmp = true,
           fidget = true,
@@ -48,6 +63,7 @@ return {
             colored_indent_levels = false,
           },
           leap = true,
+          markdown = true,
           mason = true,
           mini = true,
           native_lsp = {
@@ -66,12 +82,11 @@ return {
             },
           },
           neogit = true,
+          noice = true,
           nvimtree = true,
           telescope = true,
           treesitter = true,
-          -- notify = false,
-          -- mini = false,
-          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+          which_key = true,
         },
       })
     end,
