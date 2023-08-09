@@ -48,6 +48,10 @@ return {
         o = { "Close [O]ther Windows" },
         c = { "[C]lose Window" },
       },
+      ["m"] = {
+        name = "Match",
+        m = { "%", "Match enclosing symbol" },
+      },
     }
     wk.register(keymaps)
   end,
