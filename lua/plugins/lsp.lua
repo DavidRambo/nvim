@@ -182,6 +182,7 @@ return {
       ensure_installed = {
         "black",
         "clang-format",
+        "jedi-language-server",
         -- "mypy",
         "prettierd",
         "sql-formatter",
