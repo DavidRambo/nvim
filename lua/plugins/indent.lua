@@ -1,18 +1,21 @@
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
-    -- See `:help indent_blankline.txt`
+    -- See `:help ibl.config`
+    main = "ibl",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
-      char = "┊",
-      space_char_blankline = " ",
-      show_current_context = false,
-      show_trailing_blankline_indent = false,
-      filetype_exclude = { "dashboard", "help", "NvimTree", "lazy", "mason" },
+      indent = { char = "┊" },
+      -- space_char_blankline = " ",
+      scope = {
+        enabled = false,
+      },
+      -- whitespace = { remove_blankline_trail = false },
+      exclude = { filetypes = { "dashboard", "help", "NvimTree", "lazy", "mason" } },
     },
   },
 
-  {
+  --[[ {
     "echasnovski/mini.indentscope",
     version = false,
     event = { "BufReadPre", "BufNewFile" },
@@ -31,5 +34,5 @@ return {
     config = function(_, opts)
       require("mini.indentscope").setup(opts)
     end,
-  },
+  }, ]]
 }
