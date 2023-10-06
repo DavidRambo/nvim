@@ -49,8 +49,11 @@ return {
         c = { "[C]lose Window" },
       },
       ["m"] = {
-        name = "Match",
-        m = { "%", "Match enclosing symbol" },
+        name = "Harpoon",
+        a = { ":lua require('harpoon.mark').add_file()<CR>", "Mark file" },
+        n = { require("harpoon.ui").nav_next, "Next mark" },
+        p = { require("harpoon.ui").nav_prev, "Prev mark" },
+        v = { ":Telescope harpoon marks<CR>", "View marks" },
       },
     }
     wk.register(keymaps)

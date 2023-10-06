@@ -34,6 +34,7 @@ return {
       })
 
       require("telescope").load_extension("file_browser")
+      require("telescope").load_extension("harpoon")
 
       -- Enable telescope fzf native, if installed
       pcall(require("telescope").load_extension, "fzf")
