@@ -1,6 +1,9 @@
 return {
   "NeogitOrg/neogit",
-  dependencies = "nvim-lua/plenary.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "sindrets/diffview.nvim",
+  },
   keys = {
     { "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },
   },
@@ -63,9 +66,11 @@ return {
         },
         unpulled = {
           folded = true,
+          hidden = false,
         },
         unmerged = {
           folded = false,
+          hidden = false,
         },
         recent = {
           folded = true,
