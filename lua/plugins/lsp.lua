@@ -16,8 +16,8 @@ return {
         opts = {},
       },
 
-      -- Additional lua configuration. Setup defore setting up lspconfig for lua_ls.
-      "folke/neodev.nvim",
+      -- Additional lua configuration. Setup before setting up lspconfig for lua_ls.
+      { "folke/neodev.nvim", opts = {} },
 
       -- Hover guide for function signatures.
       "ray-x/lsp_signature.nvim",
@@ -55,10 +55,12 @@ return {
         -- jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
         ruff_lsp = {},
         lua_ls = {
-          Lua = {
-            format = { enable = false },
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
+          settings = {
+            Lua = {
+              format = { enable = false },
+              workspace = { checkThirdParty = false },
+              telemetry = { enable = false },
+            },
           },
         },
         html = {},
@@ -180,11 +182,12 @@ return {
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     opts = {
       ensure_installed = {
-        "black",
+        -- "black",
         "clang-format",
         "jedi-language-server",
         -- "mypy",
         "prettierd",
+        "ruff-lsp",
         "sql-formatter",
         "stylua",
         "shfmt",

@@ -3,7 +3,13 @@ return {
     "hrsh7th/nvim-cmp",
     version = false,
     event = "InsertEnter",
-    dependencies = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip", "onsails/lspkind.nvim" },
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "onsails/lspkind.nvim",
+    },
     opts = function()
       -- nvim-cmp setup
       local cmp = require("cmp")
@@ -16,28 +22,29 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-n"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-          ["<C-p"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+          ["<C-Space>"] = cmp.mapping.complete(),
+
+          ["<C-n"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<C-p"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
+
           ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = false,
           }),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            -- if cmp.visible() then
-            --   cmp.select_next_item()
+
+          ["<C-l>"] = cmp.mapping(function(fallback)
             if luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
             else
               fallback()
             end
           end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            -- if cmp.visible() then
-            --   cmp.select_prev_item()
+
+          ["<C-h>"] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
               luasnip.jump(-1)
             else
@@ -61,7 +68,7 @@ return {
       }
     end,
   },
-  {
-    "L3MON4D3/LuaSnip",
-  },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  -- },
 }
