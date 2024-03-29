@@ -1,6 +1,7 @@
 return {
   "folke/which-key.nvim",
-  opts = {},
+  event = "VimEnter",
+  -- opts = {},
   config = function()
     local wk = require("which-key")
     local keymaps = {
