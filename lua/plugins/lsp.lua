@@ -108,10 +108,10 @@ return {
         -- end, '[W]orkspace [L]ist Folders')
 
         -- Create a command `:Format` local to the LSP buffer
-        vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-          vim.lsp.buf.format()
-        end, { desc = "Format current buffer with LSP" })
-        nmap("<leader>bf", "<cmd>Format<CR>", "[B]uffer [F]ormat")
+        -- vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+        --   vim.lsp.buf.format()
+        -- end, { desc = "Format current buffer with LSP" })
+        -- nmap("<leader>bf", "<cmd>Format<CR>", "[B]uffer [F]ormat")
       end
 
       -- Add a border to the hover frame.
