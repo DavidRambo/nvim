@@ -21,7 +21,7 @@ return {
       html = { "prettierd" },
       json = { "prettierd" },
       lua = { "stylua" },
-      python = { "isort", { "ruff", "black" } },
+      python = { "ruff_format" },
       zsh = { "beautysh" },
     },
     formatters = {
