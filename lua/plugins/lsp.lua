@@ -162,7 +162,7 @@ return {
         },
       })
 
-      -- Workaround for warning when using clang-format (via null-ls) with clangd lsp.
+      -- Workaround for warning when using clang-format with clangd lsp.
       capabilities.offsetEncoding = { "utf-16" }
 
       require("lspconfig").clangd.setup({
@@ -182,6 +182,7 @@ return {
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     opts = {
       ensure_installed = {
+        "beautysh",
         -- "black",
         "clang-format",
         "jedi-language-server",
@@ -190,7 +191,6 @@ return {
         "ruff-lsp",
         "sql-formatter",
         "stylua",
-        "shfmt",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}

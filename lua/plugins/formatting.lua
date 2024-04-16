@@ -21,7 +21,9 @@ return {
       html = { "prettierd" },
       json = { "prettierd" },
       lua = { "stylua" },
+      markdown = { "prettierd" },
       python = { "ruff_format" },
+      sql = { "sql_formatter" },
       zsh = { "beautysh" },
     },
     formatters = {
