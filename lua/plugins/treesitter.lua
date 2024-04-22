@@ -16,6 +16,7 @@ return {
       "lua",
       "python",
       "json",
+      "just",
       "scheme",
       "vim",
       "vimdoc",
