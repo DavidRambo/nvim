@@ -14,6 +14,7 @@ return {
               ["<C-u>"] = false,
               ["<C-d>"] = false,
               ["<esc>"] = require("telescope.actions").close,
+              ["<C-g>"] = require("telescope.actions").close,
             },
           },
           file_ignore_patterns = {
@@ -22,7 +23,7 @@ return {
         },
         extensions = {
           file_browser = {
-            theme = "ivy",
+            theme = "ivy", -- cursor, dropdown
             hijack_netrw = false,
             mappings = {
               ["i"] = {
