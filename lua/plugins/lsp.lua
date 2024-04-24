@@ -186,6 +186,7 @@ return {
         -- "black",
         "clang-format",
         "jedi-language-server",
+        "lua-language-server",
         -- "mypy",
         "prettierd",
         "ruff-lsp",
