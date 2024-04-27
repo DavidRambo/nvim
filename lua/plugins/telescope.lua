@@ -28,6 +28,8 @@ return {
             mappings = {
               ["i"] = {
                 ["<C-a>"] = require("telescope").extensions.file_browser.actions.create,
+                ["<C-d>"] = require("telescope").extensions.file_browser.actions.remove,
+                ["<C-r>"] = require("telescope").extensions.file_browser.actions.rename,
               },
             },
           },
