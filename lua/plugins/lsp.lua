@@ -91,12 +91,21 @@ return {
         nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
         nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
         nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-        nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+        nmap(
+          "<leader>ds",
+          require("telescope.builtin").lsp_document_symbols,
+          "[D]ocument [S]ymbols"
+        )
         -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
         -- See `:help K` for why this keymap
         nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-        vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Signature Help" })
+        vim.keymap.set(
+          { "n", "i" },
+          "<C-k>",
+          vim.lsp.buf.signature_help,
+          { buffer = bufnr, desc = "Signature Help" }
+        )
         -- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
         -- Lesser used LSP functionality
@@ -115,7 +124,8 @@ return {
       end
 
       -- Add a border to the hover frame.
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+      vim.lsp.handlers["textDocument/hover"] =
+        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
       -- require("lsp_signature").on_attach({
       --   bind = true, -- This is mandatory, otherwise border config won't get registered.

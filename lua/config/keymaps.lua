@@ -64,8 +64,9 @@ n_remap("<C-x><C-s>", ":w<CR>", "[F]ile [S]ave")
 i_remap("<C-a>", "<ESC>I")
 i_remap("<C-e>", "<ESC>A")
 
--- Delete whole word in insert mode
-i_remap("<C-h>", "<C-w>")
+-- Delete whole word in insert mode using Ctrl-Backspace
+-- <C-h> works for reasons I don't recall, but I've remapped that to tabout and completions.
+-- i_remap("<C-h>", "<C-w>")
 
 -- Add newline above in insert mode
 -- i_remap("OO", "<ESC>O")
