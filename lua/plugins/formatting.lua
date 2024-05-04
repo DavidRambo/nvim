@@ -22,7 +22,7 @@ return {
       json = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
-      python = { "ruff_format" },
+      python = {}, -- fallback to ruff_lsp
       sql = { "sql_formatter" },
       zsh = { "beautysh" },
     },
