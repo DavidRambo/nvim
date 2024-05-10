@@ -17,6 +17,7 @@ return {
     formatters_by_ft = {
       bash = { "beautysh" },
       c = { "clang-format" },
+      css = { "prettierd" },
       fish = { "fish_indent" },
       html = { "prettierd" },
       json = { "prettierd" },
