@@ -93,6 +93,10 @@ n_remap("<leader>we", "<C-w><Down>")
 n_remap("<leader>wb", "<C-w>=")
 n_remap("<leader>wo", ":only<CR>")
 n_remap("<leader>wc", ":close<CR>")
+n_remap("<M-,>", "<C-W>5<")
+n_remap("<M-.>", "<C-W>5>")
+n_remap("<M-=>", "<C-W>+")
+n_remap("<M-->", "<C-W>-")
 
 -- Open Lazy UI
 n_remap("<leader>cl", "<cmd>Lazy<CR>", "Lazy")
