@@ -25,6 +25,7 @@ return {
       markdown = { "prettierd" },
       python = {}, -- fallback to ruff_lsp
       sql = { "sql_formatter" },
+      yaml = { "prettierd" },
       zsh = { "beautysh" },
     },
     formatters = {
