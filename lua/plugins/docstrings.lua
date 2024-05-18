@@ -13,5 +13,17 @@ return {
         },
       },
     })
+    vim.keymap.set(
+      "n",
+      "<leader>nf",
+      "<cmd>lua require('neogen').generate()<CR>",
+      { desc = "[N]eogen [F]unction" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>nc",
+      "<cmd>lua require('neogen').generate({ type = 'class' })<CR>",
+      { desc = "[N]eogen [C]lass" }
+    )
   end,
 }
