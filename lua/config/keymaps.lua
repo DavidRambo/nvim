@@ -77,6 +77,8 @@ n_remap("<leader>bn", "<cmd>bnext<CR>", "[N]ext [B]uffer")
 n_remap("<leader>bp", "<cmd>bprevious<CR>", "[P]revious [B]uffer")
 -- delete buffer
 -- n_remap("<leader>bk", "<cmd>bd<CR>")
+-- Distribute text across lines using fmt
+vim.api.nvim_set_keymap("v", "<leader>cw", ":!fmt -w 88<CR>", { desc = "[C]ode [W]rap" })
 
 -- Tabs
 -- n_remap("<leader>tn", ":tabnew<CR>")
@@ -84,8 +86,10 @@ n_remap("<leader>bp", "<cmd>bprevious<CR>", "[P]revious [B]uffer")
 -- n_remap("<leader>to", ":tabn<CR>")
 
 -- Windows
-n_remap("<leader>ws", ":split<CR>:Telescope buffers<CR>")
-n_remap("<leader>wv", ":vsplit<CR>:Telescope buffers<CR>")
+-- n_remap("<leader>ws", ":split<CR>:Telescope buffers<CR>")
+-- n_remap("<leader>wv", ":vsplit<CR>:Telescope buffers<CR>")
+n_remap("<leader>ws", ":split<CR>")
+n_remap("<leader>wv", ":vsplit<CR>")
 n_remap("<leader>wn", "<C-w><Left>")
 n_remap("<leader>wi", "<C-w><Right>")
 n_remap("<leader>wu", "<C-w><Up>")
