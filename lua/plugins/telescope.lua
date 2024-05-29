@@ -19,9 +19,26 @@ return {
           },
           file_ignore_patterns = {
             ".git/.*",
+            "venv",
+            ".venv",
+            "__pycache__",
           },
         },
+        -- pickers = {
+        --   find_files = {
+        --     find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+        --   },
+        -- },
+        preview = {
+          filesize_limit = 0.1, -- MB
+        },
         extensions = {
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+          },
           file_browser = {
             theme = "ivy", -- cursor, dropdown
             hijack_netrw = false,
