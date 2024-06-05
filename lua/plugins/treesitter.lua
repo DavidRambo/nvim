@@ -22,6 +22,7 @@ return {
       "just",
       "lua",
       "markdown",
+      "mermaid",
       "python",
       "scheme",
       "sql",
