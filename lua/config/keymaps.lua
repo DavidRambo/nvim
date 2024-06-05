@@ -58,7 +58,8 @@ n_remap("Q", "<nop>")
 
 -- map save to doom emacs bindings
 n_remap("<leader>fs", ":w<CR>", "[F]ile [S]ave")
-n_remap("<C-x><C-s>", ":w<CR>", "[F]ile [S]ave")
+-- use this as a way to avoid running autocommands on write
+n_remap("<C-x><C-s>", ":noautocmd w<CR>", "[F]ile [S]ave")
 
 -- Emacs Home and End bindings
 i_remap("<C-a>", "<ESC>I")
