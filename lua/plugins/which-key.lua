@@ -35,7 +35,7 @@ return {
         -- n = { "Create Tab" },
         -- h = { "Previous Tab" },
         -- o = { "Next Tab" },
-        c = { "Neorg Concealer" },
+        c = { ":TSContextToggle<CR>", "Treesitter Context" },
       },
       ["<leader>w"] = {
         name = "Windows",
