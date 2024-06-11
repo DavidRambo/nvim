@@ -2,7 +2,7 @@ local set = vim.opt
 
 -- set.guicursor = "" -- thick cursor in insert mode
 
-set.background = "dark"
+set.background = "light"
 set.termguicolors = true
 
 set.nu = true
