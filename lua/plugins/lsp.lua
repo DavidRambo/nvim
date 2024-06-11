@@ -35,7 +35,6 @@ return {
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
-        -- tsserver = {},
         -- pylsp = {
         -- 	pylsp = {
         -- 		plugins = {
@@ -66,6 +65,8 @@ return {
         html = {},
         cssls = {},
         -- tailwindcss = {},
+        -- eslint = {},
+        tsserver = {},
       },
     },
     config = function(_, opts)
@@ -187,6 +188,7 @@ return {
         "clangd",
         "clang-format",
         "emmet-language-server",
+        -- "eslint-lsp",
         "jedi-language-server",
         "lua-language-server",
         -- "mypy",
@@ -195,6 +197,7 @@ return {
         "ruff-lsp", -- Conform fallsback to this
         "sql-formatter",
         "stylua",
+        "typescript-language-server",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}
