@@ -52,6 +52,7 @@ return {
         -- 	},
         -- },
         -- jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
+        rnix = {},
         ruff_lsp = {},
         lua_ls = {
           settings = {
@@ -193,6 +194,7 @@ return {
         "lua-language-server",
         -- "mypy",
         "prettierd",
+        "rnix-lsp",
         -- "ruff", -- for formatting with Conform.nvim
         "ruff-lsp", -- Conform fallsback to this
         "sql-formatter",

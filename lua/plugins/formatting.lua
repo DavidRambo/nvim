@@ -25,6 +25,7 @@ return {
       json = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
+      nix = { "alejandra" }, --fallback to rnix_lsp
       python = {}, -- fallback to ruff_lsp
       sql = { "sql_formatter" },
       typescript = { "prettierd" },
