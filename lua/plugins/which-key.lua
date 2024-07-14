@@ -4,59 +4,48 @@ return {
   -- opts = {},
   config = function()
     local wk = require("which-key")
-    local keymaps = {
+    wk.add({
       mode = { "n", "v" },
-      ["<leader>b"] = { name = "+buffer" },
-      ["<leader>c"] = { name = "+comment" },
-      ["<leader>f"] = { name = "+file/find" },
-      ["g"] = { name = "+goto" },
-      ["gS"] = { "Splitjoin" },
-      -- ["<leader>gg"] = {
-      -- 	name = "Neogit",
-      -- 	g = { "Open Neo[g]it" },
-      -- },
-      ["<leader>r"] = {
-        name = "re-",
-      },
-      ["<leader>s"] = {
-        name = "search",
-        d = { "[S]earch LSP [D]efinition" },
-        p = { "[S]earch [P]roject" },
-        h = { "[S]earch [H]elp tags" },
-        o = { ":Telescope oldfiles<CR>", "[S]earch Recent Files" },
-        r = { "[R]esume [S]earch" },
-        -- s = { ":SymbolsOutline<CR>", "[S]how [S]ymbols Outline" },
-        -- t = { "[S]earch [T]reesitter symbols" },
-      },
-      ["<leader>."] = { "Find File" },
-      ["<leader>,"] = { "Find Buffer" },
-      ["<leader>t"] = {
-        name = "[T]oggle",
-        -- n = { "Create Tab" },
-        -- h = { "Previous Tab" },
-        -- o = { "Next Tab" },
-        c = { ":TSContextToggle<CR>", "Treesitter Context" },
-      },
-      ["<leader>w"] = {
-        name = "Windows",
-        v = { "Vertical Split" },
-        s = { "Horizontal Split" },
-        n = { "Focus Left" },
-        i = { "Focus Right" },
-        u = { "Focus Up" },
-        e = { "Focus Down" },
-        b = { "[B]alance Windows" },
-        o = { "Close [O]ther Windows" },
-        c = { "[C]lose Window" },
-      },
-      ["m"] = {
-        name = "Harpoon",
-        a = { ":lua require('harpoon.mark').add_file()<CR>", "Mark file" },
-        n = { require("harpoon.ui").nav_next, "Next mark" },
-        p = { require("harpoon.ui").nav_prev, "Prev mark" },
-        v = { ":Telescope harpoon marks<CR>", "View marks" },
-      },
-    }
-    wk.register(keymaps)
+      { "<leader>.", group = "Find File" },
+      { "<leader>,", group = "Find Buffer" },
+
+      { "<leader>b", group = "buffer" },
+
+      { "<leader>c", group = "comment/code" },
+      { "<leader>ca", desc = "Append comment" },
+
+      { "<leader>f", group = "file/find" },
+
+      { "<leader>g", group = "goto" },
+
+      { "gS", desc = "Splitjoin" },
+
+      { "<leader>m", group = "Harpoon" },
+      { "<leader>ma", ":lua require('harpoon.mark').add_file()<CR>", desc = "Mark file" },
+      { "<leader>mn", require("harpoon.ui").nav_next, desc = "Next mark" },
+      { "<leader>mp", require("harpoon.ui").nav_prev, desc = "Previous mark" },
+      { "<leader>mv", ":Telescope harpoon marks<CR>", desc = "View marks" },
+
+      { "<leader>s", group = "search" },
+      { "<leader>sd", desc = "[S]earch LSP [D]efinition" },
+      { "<leader>sp", desc = "[S]earch [P]roject" },
+      { "<leader>sh", desc = "[S]earch [H]elp tags" },
+      { "<leader>so", ":Telescope oldfiles<CR>", desc = "[S]earch [R]ecent Files" },
+      { "<leader>sr", desc = "[R]esume [S]earch" },
+
+      { "<leader>t", group = "Toggle" },
+      { "<leader>tc", ":TSContextToggle<CR>", desc = "Treesitter Context" },
+
+      { "<leader>w", group = "Windows" },
+      { "<leader>wv", desc = "Vertical Split" },
+      { "<leader>ws", desc = "Horizontal Split" },
+      { "<leader>wn", desc = "Focus Left" },
+      { "<leader>wi", desc = "Focus Right" },
+      { "<leader>wu", desc = "Focus Up" },
+      { "<leader>we", desc = "Focus Down" },
+      { "<leader>wb", desc = "Balance" },
+      { "<leader>wo", desc = "Close Other Windows" },
+      { "<leader>wc", desc = "Close Window" },
+    })
   end,
 }

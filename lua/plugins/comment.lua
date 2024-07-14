@@ -3,14 +3,14 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   opts = {
     ignore = "^$",
-    toggler = {
-      line = "<leader>cc",
-      block = "<leader>cb",
-    },
-    opleader = {
-      line = "<leader>c",
-      block = "<leader>b",
-    },
+    -- toggler = {
+    --   line = "<leader>cc",
+    --   block = "<leader>cb",
+    -- },
+    -- opleader = {
+    --   line = "<leader>c",
+    --   block = "<leader>b",
+    -- },
     extra = {
       -- Add comment on the line above
       above = "<leader>cO",
@@ -21,11 +21,11 @@ return {
     },
     -- Enable keybindings
     -- Note: If given `false` then the plugin won't create any mappings
-    -- mappings = {
-    --   -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-    --   basic = true,
-    --   -- Extra mapping; `gco`, `gcO`, `gcA`
-    --   extra = true,
-    -- },
+    mappings = {
+      -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+      basic = true,
+      -- Extra mapping; `gco`, `gcO`, `gcA`
+      extra = true,
+    },
   },
 }
