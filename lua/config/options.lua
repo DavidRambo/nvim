@@ -51,7 +51,11 @@ vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
-vim.g.python3_host_prog = "/home/david/.pyenv/shims/python3"
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.filetype.add({
+  extension = {
+    ["http"] = "http",
+  },
+})

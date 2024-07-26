@@ -16,7 +16,9 @@ return {
       "c",
       "css",
       "fish",
+      "graphql",
       "html",
+      "http",
       "java",
       "javascript",
       "json",
@@ -31,6 +33,7 @@ return {
       "typescript",
       "vim",
       "vimdoc",
+      "xml",
       "yaml",
     },
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
