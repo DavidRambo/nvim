@@ -16,6 +16,11 @@ return {
   },
 
   {
+    "echasnovski/mini.icons",
+    version = false,
+  },
+
+  {
     "echasnovski/mini.move",
     config = function()
       require("mini.move").setup({
