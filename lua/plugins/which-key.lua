@@ -13,6 +13,7 @@ return {
 
       { "<leader>c", group = "comment/code" },
       { "<leader>ca", desc = "Append comment" },
+      { "<leader>cw", desc = "[C]ode [W]rap" },
 
       { "<leader>f", group = "file/find" },
 
@@ -46,6 +47,9 @@ return {
       { "<leader>wb", desc = "Balance" },
       { "<leader>wo", desc = "Close Other Windows" },
       { "<leader>wc", desc = "Close Window" },
+
+      { "<leader>x", group = "Commands" },
+      { "<leader>xk", ":lua require('kulala').run()<CR>", desc = "Kulala run" },
     })
   end,
 }
