@@ -34,8 +34,11 @@ return {
       zsh = { "beautysh" },
     },
     formatters = {
-      clang_format = { -- This doesn't work : (
-        extra_args = { "-style=", "'{IndentCaseLabels: true}'" },
+      ["clang-format"] = {
+        prepend_args = {
+          "--style",
+          "{IndentCaseLabels: true, IndentWidth: 4, AllowShortFunctionsOnASingleLine: None}",
+        },
       },
     },
   },
