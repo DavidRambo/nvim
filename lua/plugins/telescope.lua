@@ -14,7 +14,6 @@ return {
               ["<C-u>"] = false,
               ["<C-d>"] = false,
               ["<esc>"] = require("telescope.actions").close,
-              ["<C-g>"] = require("telescope.actions").close,
             },
           },
           file_ignore_patterns = {
