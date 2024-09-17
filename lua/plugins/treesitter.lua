@@ -24,7 +24,7 @@ return {
       "json",
       "just",
       "lua",
-      "markdown",
+      -- "markdown",
       "mermaid",
       "nix",
       "python",
