@@ -32,7 +32,7 @@ require("lazy").setup({
   { import = "plugins" },
 }, {})
 
-vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("catppuccin")
 
 -- [[ Setting options ]]
 require("config.options")
