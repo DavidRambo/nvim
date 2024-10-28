@@ -93,21 +93,12 @@ return {
         nmap("<leader>gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
         nmap("<leader>gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
         nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-        nmap(
-          "<leader>ds",
-          require("telescope.builtin").lsp_document_symbols,
-          "[D]ocument [S]ymbols"
-        )
+        nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
         -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
         -- See `:help K` for why this keymap
         nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-        vim.keymap.set(
-          { "n", "i" },
-          "<C-k>",
-          vim.lsp.buf.signature_help,
-          { buffer = bufnr, desc = "Signature Help" }
-        )
+        vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Signature Help" })
         -- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
         -- Lesser used LSP functionality
@@ -126,8 +117,7 @@ return {
       end
 
       -- Add a border to the hover frame.
-      vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
       -- require("lsp_signature").on_attach({
       --   bind = true, -- This is mandatory, otherwise border config won't get registered.
@@ -150,9 +140,9 @@ return {
       -- Ensure the servers above are installed
       local mason_lspconfig = require("mason-lspconfig")
 
-      mason_lspconfig.setup({
-        ensure_installed = vim.tbl_keys(opts.servers),
-      })
+      -- mason_lspconfig.setup({
+      --   ensure_installed = vim.tbl_keys(opts.servers),
+      -- })
 
       mason_lspconfig.setup_handlers({
         function(server_name)
@@ -206,7 +196,7 @@ return {
         "prettierd",
         "rnix-lsp",
         -- "ruff", -- for formatting with Conform.nvim
-        "ruff-lsp", -- Conform fallsback to this
+        "ruff-lsp", -- Conform falls back to this
         "sql-formatter",
         "stylua",
         "typescript-language-server",
@@ -215,7 +205,9 @@ return {
     ---@param opts MasonSettings | {ensure_installed: string[]}
     config = function(_, opts)
       require("mason").setup(opts)
+
       local mr = require("mason-registry")
+
       local function ensure_installed()
         for _, tool in ipairs(opts.ensure_installed) do
           local p = mr.get_package(tool)
@@ -224,6 +216,7 @@ return {
           end
         end
       end
+
       if mr.refresh then
         mr.refresh(ensure_installed)
       else
