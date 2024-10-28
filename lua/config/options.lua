@@ -19,6 +19,10 @@ set.shiftwidth = 4
 
 set.expandtab = true
 
+set.virtualedit = "block"
+
+set.inccommand = "split"
+
 -- search settings
 set.hlsearch = false
 set.incsearch = true
