@@ -13,7 +13,7 @@ return {
     ensure_installed = {
       "asm",
       "bash",
-      "c",
+      "cpp",
       "css",
       "fish",
       "graphql",
