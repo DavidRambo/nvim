@@ -21,11 +21,11 @@ return {
 
       { "gS", desc = "Splitjoin" },
 
-      { "m", group = "Harpoon", desc = "+Harpoon" },
-      { "ma", ":lua require('harpoon.mark').add_file()<CR>", desc = "Mark file" },
-      { "mn", require("harpoon.ui").nav_next, desc = "Next mark" },
-      { "mp", require("harpoon.ui").nav_prev, desc = "Previous mark" },
-      { "mv", ":Telescope harpoon marks<CR>", desc = "View marks" },
+      { "<leader>m", group = "Harpoon", desc = "+Harpoon" },
+      { "<leader>ma", ":lua require('harpoon.mark').add_file()<CR>", desc = "Mark file" },
+      { "<leader>mn", require("harpoon.ui").nav_next, desc = "Next mark" },
+      { "<leader>mp", require("harpoon.ui").nav_prev, desc = "Previous mark" },
+      { "<leader>mv", ":Telescope harpoon marks<CR>", desc = "View marks" },
 
       { "<leader>s", group = "search" },
       { "<leader>sd", desc = "[S]earch LSP [D]efinition" },

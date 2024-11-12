@@ -58,6 +58,8 @@ n_remap("<C-x><C-s>", ":noautocmd w<CR>", "[F]ile [S]ave")
 i_remap("<C-a>", "<ESC>I")
 i_remap("<C-e>", "<ESC>A")
 
+vim.keymap.set({ "n", "v" }, "m", "%")
+
 -- Delete whole word in insert mode using Ctrl-Backspace
 -- <C-h> works for reasons I don't recall, but I've remapped that to tabout and completions.
 -- i_remap("<C-h>", "<C-w>")
