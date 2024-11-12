@@ -1,5 +1,5 @@
 return {
-  "karb94/neoscroll.nvim",
+  --[[ "karb94/neoscroll.nvim",
   config = function()
     local neoscroll = require("neoscroll")
     neoscroll.setup({
@@ -26,5 +26,5 @@ return {
     for key, func in pairs(keymap) do
       vim.keymap.set(modes, key, func)
     end
-  end,
+  end, ]]
 }
