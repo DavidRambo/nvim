@@ -74,7 +74,6 @@ return {
       local on_attach = function(client, bufnr)
         -- Do not attach the server to Navbuddy if it does not support documentSymbols.
         if client.server_capabilities.documentSymbolProvider then
-          -- if client.name ~= "ruff_lsp" and client.name ~= "tailwindcss" and client.name ~= "emmet_language_server" then
           require("nvim-navbuddy").attach(client, bufnr)
         end
 
