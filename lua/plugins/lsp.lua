@@ -125,8 +125,9 @@ return {
       end
 
       -- Add a border to the hover frame.
-      vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+      -- FIX: Tried to replace deprecated API, but this doesn't work.
+      -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
+      -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.hover({ border = "rounded" })
 
       -- require("lsp_signature").on_attach({
       --   bind = true, -- This is mandatory, otherwise border config won't get registered.
