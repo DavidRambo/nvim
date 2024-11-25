@@ -196,7 +196,6 @@ return {
         "beautysh",
         -- "black",
         "clangd",
-        "clang-format",
         "emmet-language-server",
         -- "eslint-lsp",
         "jedi-language-server",
