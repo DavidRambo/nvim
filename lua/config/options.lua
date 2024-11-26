@@ -2,9 +2,9 @@ local set = vim.opt
 
 -- set.guicursor = "" -- thick cursor in insert mode
 
-if vim.fn.has("Linux") then
+if vim.loop.os_uname().sysname == "Linux" then
   set.background = "dark"
-elseif vim.fn.has("Darwin") then
+elseif vim.loop.os_uname().sysname == "Darwin" then
   set.background = "light"
 end
 
