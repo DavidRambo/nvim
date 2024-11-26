@@ -20,7 +20,23 @@ return {
       { "folke/neodev.nvim", opts = {} },
 
       -- Hover guide for function signatures.
-      "ray-x/lsp_signature.nvim",
+      {
+        "ray-x/lsp_signature.nvim",
+        opts = {
+          bind = true,
+          handler_opts = {
+            border = "rounded",
+          },
+          hint_prefix = {
+            above = "↙ ", -- when the hint is on the line above the current line
+            current = "← ", -- when the hint is on the same line
+            below = "↖ ", -- when th
+          },
+        },
+        config = function(_, opts)
+          require("lsp_signature").setup(opts)
+        end,
+      },
     },
     opts = {
       diagnostics = {
