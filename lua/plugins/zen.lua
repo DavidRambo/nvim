@@ -7,7 +7,7 @@ return {
   config = function()
     require("zen-mode").setup({
       window = {
-        backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+        backdrop = 1, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
         -- height and width can be:
         -- * an absolute number of cells when > 1
         -- * a percentage of the width / height of the editor when <= 1
@@ -34,17 +34,9 @@ return {
           ruler = false, -- disables the ruler text in the cmd line area
           showcmd = false, -- disables the command in the last line of the screen
         },
-        -- twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+        twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
         gitsigns = { enabled = false }, -- disables git signs
         tmux = { enabled = false }, -- disables the tmux statusline
-        -- this will change the font size on kitty when in zen mode
-        -- to make this work, you need to set the following kitty options:
-        -- - allow_remote_control socket-only
-        -- - listen_on unix:/tmp/kitty
-        kitty = {
-          enabled = false,
-          font = "+4", -- font size increment
-        },
       },
     })
   end,
