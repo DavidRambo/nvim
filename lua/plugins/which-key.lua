@@ -36,6 +36,7 @@ return {
 
       { "<leader>t", group = "Toggle" },
       { "<leader>tc", ":TSContextToggle<CR>", desc = "Treesitter Context" },
+      { "<leader>tt", ":Twilight<CR>", desc = "Twilight" },
 
       { "<leader>w", group = "Windows" },
       { "<leader>wv", desc = "Vertical Split" },
