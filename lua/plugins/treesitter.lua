@@ -19,6 +19,7 @@ return {
       "graphql",
       "html",
       "http",
+      "go",
       "java",
       "javascript",
       "json",
