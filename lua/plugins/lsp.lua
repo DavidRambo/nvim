@@ -29,7 +29,7 @@ return {
       -- autoformat = true,
       servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- pylsp = {
@@ -196,6 +196,7 @@ return {
         "clangd",
         "emmet-language-server",
         -- "eslint-lsp",
+        "gopls",
         "jedi-language-server",
         "lua-language-server",
         -- "mypy",

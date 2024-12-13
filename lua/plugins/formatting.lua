@@ -19,6 +19,7 @@ return {
       c = {},
       css = { "prettierd" },
       fish = { "fish_indent" },
+      go = {},
       html = { "prettierd" },
       javascript = { "prettierd" },
       javascriptreact = { "prettierd" },
