@@ -10,7 +10,7 @@ M.edit_nvim_conf = function()
     cwd = "~/.config/nvim/",
     prompt = "~ neovim config ~",
     height = 10,
-    layout_strategy = "horizontal",
+    layout_strategy = "bottom_pane",
     layout_options = {
       preview_width = 0.75,
     },
@@ -23,7 +23,7 @@ M.find_qmk = function()
     shorten_path = true,
     cwd = "~/repos/qmk_firmware/keyboards/",
     prompt = "~ QMK Keyboards ~",
-    layout_strategy = "horizontal",
+    layout_strategy = "bottom_pane",
     layout_options = {
       preview_width = 0.75,
     },
@@ -38,7 +38,7 @@ end
 M.file_finder = function()
   local opts = {
     shorten_path = true,
-    layout_strategy = "horizontal",
+    layout_strategy = "bottom_pane",
     layout_options = {
       preview_width = 0.75,
     },

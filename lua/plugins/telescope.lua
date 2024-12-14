@@ -23,11 +23,15 @@ return {
             "__pycache__",
           },
         },
-        -- pickers = {
-        --   find_files = {
-        --     find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-        --   },
-        -- },
+        pickers = {
+          buffers = {
+            theme = "ivy",
+          },
+          find_files = {
+            theme = "ivy",
+            --     find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+          },
+        },
         preview = {
           filesize_limit = 0.1, -- MB
         },

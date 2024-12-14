@@ -105,14 +105,14 @@ n_remap("<leader>cl", "<cmd>Lazy<CR>", "Lazy")
 vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "[F]ind [R]ecently opened files" })
 vim.keymap.set("n", "<leader>/", function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
     winblend = 10,
     previewer = false,
   }))
 end, { desc = "[/] Fuzzily search in current buffer" })
 
 vim.keymap.set("n", "<leader>.", require("config.tele").file_finder, { desc = "Find Files" })
-vim.keymap.set("n", "<leader>,", "<cmd>:Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>,", require("telescope.builtin").buffers)
 n_remap("<leader>fb", ":Telescope file_browser path=%:p:h<CR>", "[F]ile [B]rowser")
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
 vim.keymap.set(
