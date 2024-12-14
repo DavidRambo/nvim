@@ -133,10 +133,9 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>sk", "<cmd>Telescope keymaps<CR>", { desc = "[S]earch [K]eymaps" })
-n_remap("<leader>ht", "<cmd>Telescope colorscheme<CR>")
+n_remap("<leader>ht", "<cmd>Telescope colorscheme<CR>") -- DOOM Emacs muscle memory
 vim.keymap.set("n", "<leader>sc", "<cmd>Telescope colorscheme<CR>", { desc = "[S]earch [C]olorschemes " })
 vim.keymap.set("n", "<leader>sr", "<cmd>Telescope resume<CR>", { desc = "[R]esume [S]earch" })
-vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<CR>", { desc = "[S]earch [T]ODOs" })
 
 -- Diagnostic keymaps
 vim.keymap.set(
