@@ -25,6 +25,7 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
+        preselect = cmp.PreselectMode.None,
         mapping = cmp.mapping.preset.insert({
           ["<C-Space>"] = cmp.mapping.complete(),
 
