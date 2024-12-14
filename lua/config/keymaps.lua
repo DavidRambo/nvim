@@ -111,7 +111,7 @@ vim.keymap.set("n", "<leader>/", function()
   }))
 end, { desc = "[/] Fuzzily search in current buffer" })
 
-vim.keymap.set("n", "<leader>.", "<cmd>:lua require('config.tele').file_finder()<CR>", { desc = "Find Files" })
+vim.keymap.set("n", "<leader>.", require("config.tele").file_finder, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>,", "<cmd>:Telescope buffers<CR>")
 n_remap("<leader>fb", ":Telescope file_browser path=%:p:h<CR>", "[F]ile [B]rowser")
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
