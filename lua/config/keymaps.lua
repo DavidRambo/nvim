@@ -122,7 +122,7 @@ vim.keymap.set(
   { desc = "Neovim Config Files" }
 )
 vim.keymap.set("n", "<leader>fq", "<cmd>:lua require('config.tele').find_qmk()<CR>", { desc = "QMK Keyboards" })
-vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
+vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "[F]ind [H]elp tags" })
 vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
 vim.keymap.set("n", "<leader>sp", require("telescope.builtin").live_grep, { desc = "[S]earch [P]roject by grep" })
 vim.keymap.set(

@@ -30,7 +30,7 @@ return {
       { "<leader>s", group = "search" },
       { "<leader>sd", desc = "[S]earch LSP [D]efinition" },
       { "<leader>sp", desc = "[S]earch [P]roject" },
-      { "<leader>sh", desc = "[S]earch [H]elp tags" },
+      { "<leader>fh", desc = "[F]ind [H]elp tags" },
       { "<leader>so", ":Telescope oldfiles<CR>", desc = "[S]earch [R]ecent Files" },
       { "<leader>sr", desc = "[R]esume [S]earch" },
 
