@@ -48,7 +48,7 @@ set.cmdheight = 1
 
 set.showcmd = false
 
-set.completeopt = { "menu", "menuone", "noselect" }
+set.completeopt = "menu,menuone,noselect"
 
 set.clipboard:append("unnamedplus")
 
