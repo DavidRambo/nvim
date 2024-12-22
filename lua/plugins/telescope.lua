@@ -24,6 +24,9 @@ return {
           },
         },
         pickers = {
+          current_buffer_fuzzy_find = {
+            theme = "ivy",
+          },
           buffers = {
             theme = "ivy",
           },
