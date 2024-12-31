@@ -34,6 +34,9 @@ return {
             theme = "ivy",
             --     find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
           },
+          lsp_references = {
+            theme = "ivy",
+          },
         },
         preview = {
           filesize_limit = 0.1, -- MB
