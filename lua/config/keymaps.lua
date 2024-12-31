@@ -26,7 +26,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
-vim.api.nvim_set_keymap("n", "<Up>", "v:count == 0 ? 'g<Up>' : '<Up>'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<Up>",
+  "v:count == 0 ? 'g<Up>' : '<Up>'",
+  { noremap = true, expr = true, silent = true }
+)
 vim.api.nvim_set_keymap(
   "n",
   "<Down>",
@@ -102,7 +107,12 @@ n_remap("<M-->", "<C-W>-")
 n_remap("<leader>cl", "<cmd>Lazy<CR>", "Lazy")
 
 -- See `:help telescope.builtin`
-vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, { desc = "[F]ind [R]ecently opened files" })
+vim.keymap.set(
+  "n",
+  "<leader>fr",
+  require("telescope.builtin").oldfiles,
+  { desc = "[F]ind [R]ecently opened files" }
+)
 vim.keymap.set("n", "<leader>/", function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
@@ -114,27 +124,62 @@ end, { desc = "[/] Fuzzily search in current buffer" })
 vim.keymap.set("n", "<leader>.", require("config.tele").file_finder, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>,", require("telescope.builtin").buffers)
 n_remap("<leader>fb", ":Telescope file_browser path=%:p:h<CR>", "[F]ile [B]rowser")
-vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
+vim.keymap.set(
+  "n",
+  "<leader>ff",
+  require("telescope.builtin").find_files,
+  { desc = "[F]ind [F]iles" }
+)
 vim.keymap.set(
   "n",
   "<leader>fp",
   "<cmd>:lua require('config.tele').edit_nvim_conf()<CR>",
   { desc = "Neovim Config Files" }
 )
-vim.keymap.set("n", "<leader>fq", "<cmd>:lua require('config.tele').find_qmk()<CR>", { desc = "QMK Keyboards" })
-vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "[F]ind [H]elp tags" })
-vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>sp", require("telescope.builtin").live_grep, { desc = "[S]earch [P]roject by grep" })
+vim.keymap.set(
+  "n",
+  "<leader>fq",
+  "<cmd>:lua require('config.tele').find_qmk()<CR>",
+  { desc = "QMK Keyboards" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>fh",
+  require("telescope.builtin").help_tags,
+  { desc = "[F]ind [H]elp tags" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>sw",
+  require("telescope.builtin").grep_string,
+  { desc = "[S]earch current [W]ord" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>sp",
+  require("telescope.builtin").live_grep,
+  { desc = "[S]earch [P]roject by grep" }
+)
 vim.keymap.set(
   "n",
   "<leader>sb",
   require("telescope.builtin").current_buffer_fuzzy_find,
   { desc = "[S]earch [B]uffer" }
 )
-vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
+vim.keymap.set(
+  "n",
+  "<leader>sd",
+  require("telescope.builtin").diagnostics,
+  { desc = "[S]earch [D]iagnostics" }
+)
 vim.keymap.set("n", "<leader>sk", "<cmd>Telescope keymaps<CR>", { desc = "[S]earch [K]eymaps" })
 n_remap("<leader>ht", "<cmd>Telescope colorscheme<CR>") -- DOOM Emacs muscle memory
-vim.keymap.set("n", "<leader>sc", "<cmd>Telescope colorscheme<CR>", { desc = "[S]earch [C]olorschemes " })
+vim.keymap.set(
+  "n",
+  "<leader>sc",
+  "<cmd>Telescope colorscheme<CR>",
+  { desc = "[S]earch [C]olorschemes " }
+)
 vim.keymap.set("n", "<leader>sr", "<cmd>Telescope resume<CR>", { desc = "[R]esume [S]earch" })
 
 -- Diagnostic keymaps
@@ -150,5 +195,10 @@ vim.keymap.set(
   ":lua vim.diagnostic.jump({ count = 1, float = true })",
   { desc = "Go to next diagnostic message" }
 )
-vim.keymap.set("n", "<leader>dh", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set(
+  "n",
+  "<leader>dh",
+  vim.diagnostic.open_float,
+  { desc = "Open floating diagnostic message" }
+)
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
