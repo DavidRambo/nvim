@@ -24,12 +24,18 @@ return {
           },
         },
         pickers = {
+          current_buffer_fuzzy_find = {
+            theme = "ivy",
+          },
           buffers = {
             theme = "ivy",
           },
           find_files = {
             theme = "ivy",
             --     find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+          },
+          lsp_references = {
+            theme = "ivy",
           },
         },
         preview = {
