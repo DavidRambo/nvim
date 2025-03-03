@@ -28,6 +28,7 @@ return {
       -- "markdown",
       "mermaid",
       "nix",
+      "org",
       "python",
       "scheme",
       "sql",
