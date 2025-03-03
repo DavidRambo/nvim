@@ -60,6 +60,7 @@ return {
             },
           },
         },
+        jinja_lsp = {},
         html = {},
         cssls = {},
         -- tailwindcss = {},

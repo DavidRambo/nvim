@@ -66,5 +66,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.filetype.add({
   extension = {
     ["http"] = "http",
+    jinja = "jinja",
+    jinja2 = "jinja",
+    j2 = "jinja",
   },
 })
