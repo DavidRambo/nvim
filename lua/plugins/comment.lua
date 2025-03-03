@@ -8,8 +8,8 @@ return {
     --   block = "<leader>cb",
     -- },
     -- opleader = {
-    --   line = "<leader>c",
-    --   block = "<leader>b",
+    --   line = "<leader>c", -- default is 'gc'
+    --   block = "<leader>b", -- default is 'gb'
     -- },
     extra = {
       -- Add comment on the line above
