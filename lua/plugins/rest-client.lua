@@ -1,5 +1,5 @@
 return {
-  {
+  --[[ {
     "mistweaverco/kulala.nvim",
     event = "VeryLazy",
     config = function()
@@ -14,5 +14,5 @@ return {
         debug = false,
       })
     end,
-  },
+  }, ]]
 }
