@@ -15,7 +15,7 @@ return {
       }
     end,
     formatters_by_ft = {
-      bash = { "beautysh" },
+      sh = { "beautysh" },
       c = { "clang-format" },
       cpp = { "clang-format" },
       css = { "prettierd" },
