@@ -16,7 +16,8 @@ return {
     end,
     formatters_by_ft = {
       bash = { "beautysh" },
-      c = {},
+      c = { "clang-format" },
+      cpp = { "clang-format" },
       css = { "prettierd" },
       django = { "djlint" },
       fish = { "fish_indent" },
@@ -38,14 +39,14 @@ return {
       yaml = { "prettierd" },
       zsh = { "beautysh" },
     },
-    formatters = {
-      ["clang-format"] = {
-        prepend_args = {
-          "--style",
-          "{IndentCaseLabels: true, IndentWidth: 4, AllowShortFunctionsOnASingleLine: None}",
-        },
-      },
-    },
+    -- formatters = {
+    --   ["clang-format"] = {
+    --     prepend_args = {
+    --       "--style",
+    --       "{IndentCaseLabels: true, IndentWidth: 4, AllowShortFunctionsOnASingleLine: None}",
+    --     },
+    --   },
+    -- },
   },
 
   vim.keymap.set({ "n", "v" }, "<leader>bf", function()
