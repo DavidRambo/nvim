@@ -17,7 +17,7 @@ return {
       },
 
       -- Additional lua configuration. Setup before setting up lspconfig for lua_ls.
-      { "folke/neodev.nvim", opts = {} },
+      { "folke/lazydev.nvim", ft = "lua", opts = {} },
     },
     opts = {
       diagnostics = {
