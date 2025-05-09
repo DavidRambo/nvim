@@ -30,7 +30,6 @@ return {
       servers = {
         -- clangd = {},
         gopls = {},
-        -- pyright = {},
         -- rust_analyzer = {},
         -- pylsp = {
         -- 	pylsp = {
@@ -63,9 +62,6 @@ return {
         jinja_lsp = {},
         html = {},
         cssls = {},
-        -- tailwindcss = {},
-        -- eslint = {},
-        ts_ls = {},
       },
     },
     config = function(_, opts)
@@ -136,8 +132,6 @@ return {
       --   hint_prefix = "",
       -- })
       -- , bufnr) -- bufnr only required when using toggle_key function
-
-      require("neodev").setup()
 
       vim.diagnostic.config(opts.diagnostics)
 
