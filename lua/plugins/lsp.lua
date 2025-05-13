@@ -29,25 +29,7 @@ return {
       -- autoformat = true,
       servers = {
         -- clangd = {},
-        gopls = {},
-        -- rust_analyzer = {},
-        -- pylsp = {
-        -- 	pylsp = {
-        -- 		plugins = {
-        -- 			black = { enabled = true },
-        -- 			-- disable linting in favor of ruff_lsp
-        -- 			mccabe = { enabled = false },
-        -- 			pycodestyle = {
-        -- 				enabled = false,
-        -- 				-- ignore = { "W391", "E226", "E501" },
-        -- 				-- maxLineLength = 88,
-        -- 			},
-        -- 			pyflakes = { enabled = false },
-        -- 			pylint = { enabled = false },
-        -- 		},
-        -- 	},
-        -- },
-        -- jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
+        jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
         rnix = {},
         ruff = {},
         lua_ls = {
@@ -59,7 +41,6 @@ return {
             },
           },
         },
-        jinja_lsp = {},
         html = {},
         cssls = {},
       },
@@ -138,6 +119,7 @@ return {
       -- Ensure the servers above are installed
       local mason_lspconfig = require("mason-lspconfig")
 
+      -- mason_lspconfig automatically sets up servers using nvim 0.11+ built-in vim.lsp.config()
       mason_lspconfig.setup({
         ensure_installed = vim.tbl_keys(opts.servers),
         automatic_enable = true,
@@ -173,40 +155,9 @@ return {
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     opts = {
-      --[[ ensure_installed = {
-        "beautysh",
-        "clangd",
-        "emmet-language-server",
-        "gopls",
-        "jedi-language-server",
-        "lua-language-server",
-        "prettierd",
-        "rnix-lsp",
-        "ruff", -- for formatting with Conform.nvim
-        "sql-formatter",
-        "stylua",
-      }, ]]
+      ensure_installed = { -- For non-lsp tools.
+        beautysh = {},
+      },
     },
-    --[[ ---@param opts MasonSettings | {ensure_installed: string[]}
-    config = function(_, opts)
-      require("mason").setup(opts)
-
-      local mr = require("mason-registry")
-
-      local function ensure_installed()
-        for _, tool in ipairs(opts.ensure_installed) do
-          local p = mr.get_package(tool)
-          if not p:is_installed() then
-            p:install()
-          end
-        end
-      end
-
-      if mr.refresh then
-        mr.refresh(ensure_installed)
-      else
-        ensure_installed()
-      end
-    end, ]]
   },
 }
