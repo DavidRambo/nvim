@@ -35,6 +35,7 @@ return {
         lua_ls = {
           settings = {
             Lua = {
+              completion = { callSnippet = "Replace" },
               format = { enable = false },
               workspace = { checkThirdParty = false },
               telemetry = { enable = false },
