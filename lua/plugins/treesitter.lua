@@ -29,6 +29,7 @@ return {
       "mermaid",
       "nix",
       "python",
+      "rust",
       "scheme",
       "sql",
       "typescript",
