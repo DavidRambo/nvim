@@ -184,13 +184,13 @@ vim.keymap.set("n", "<leader>sr", "<cmd>Telescope resume<CR>", { desc = "[R]esum
 vim.keymap.set(
   "n",
   "[d",
-  ":lua vim.diagnostic.jump({ count = -1, float = true })",
+  ":lua vim.diagnostic.jump({ count = -1, float = true })<CR>",
   { desc = "Go to previous diagnostic message" }
 )
 vim.keymap.set(
   "n",
   "]d",
-  ":lua vim.diagnostic.jump({ count = 1, float = true })",
+  ":lua vim.diagnostic.jump({ count = 1, float = true })<CR>",
   { desc = "Go to next diagnostic message" }
 )
 vim.keymap.set(
