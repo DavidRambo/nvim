@@ -81,7 +81,9 @@ return {
           -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
           -- See `:help K` for why this keymap
-          nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+          nmap("K", function ()
+             vim.lsp.buf.hover({ border = "single" })
+          end, "Hover Documentation")
           vim.keymap.set(
             { "n", "i" },
             "<C-k>",
