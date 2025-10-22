@@ -1,7 +1,7 @@
 return {
   -- buffer remove
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
 		-- stylua: ignore
 		keys = {
 			{ "<leader>bk", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
@@ -9,19 +9,19 @@ return {
 		},
   },
   {
-    "echasnovski/mini.bracketed",
+    "nvim-mini/mini.bracketed",
     config = function()
       require("mini.bracketed").setup()
     end,
   },
 
   {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     version = false,
   },
 
   {
-    "echasnovski/mini.move",
+    "nvim-mini/mini.move",
     config = function()
       require("mini.move").setup({
         mappings = {
@@ -35,7 +35,7 @@ return {
   },
 
   {
-    "echasnovski/mini.splitjoin",
+    "nvim-mini/mini.splitjoin",
     version = false,
     event = "VeryLazy",
     config = function()
