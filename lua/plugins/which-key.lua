@@ -7,7 +7,6 @@ return {
     wk.add({
       mode = { "n", "v" },
       { "<leader>.", group = "Find File" },
-      { "<leader>,", group = "Find Buffer" },
 
       { "<leader>b", group = "buffer" },
 
