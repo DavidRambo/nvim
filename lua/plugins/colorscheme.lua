@@ -11,7 +11,7 @@ return {
         background = {
           -- :h background
           light = "latte",
-          dark = "macchiato",
+          dark = "mocha",
         },
         transparent_background = false,
         show_end_of_buffer = false, -- show the '~' after the end of buffers
