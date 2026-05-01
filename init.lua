@@ -40,6 +40,14 @@ require("config.options")
 -- [[ Keymaps ]]
 require("config.keymaps")
 
+-- Enable treesitter text highlighting
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "<filetype>" },
+  callback = function()
+    vim.treesiter.start()
+  end,
+})
+
 -- vim.diagnostic.config({
 --   -- virtual_text = {
 --   --   source = "always", -- Or "if_many"
