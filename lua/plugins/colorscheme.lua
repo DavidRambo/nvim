@@ -11,7 +11,7 @@ return {
         background = {
           -- :h background
           light = "latte",
-          dark = "macchiato",
+          dark = "mocha",
         },
         transparent_background = false,
         float = {
