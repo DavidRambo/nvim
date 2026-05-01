@@ -14,6 +14,10 @@ return {
           dark = "macchiato",
         },
         transparent_background = false,
+        float = {
+          transparent = false, -- enable transparent floating windows
+          solid = false, -- use solid styling for floating windows, see |winborder|
+        },
         show_end_of_buffer = false, -- show the '~' after the end of buffers
         -- dim_inactive = {
         -- 	enabled = true,
