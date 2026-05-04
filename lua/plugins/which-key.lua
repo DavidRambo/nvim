@@ -1,10 +1,8 @@
 return {
   "folke/which-key.nvim",
   event = "VimEnter",
-  -- opts = {},
   config = function()
-    local wk = require("which-key")
-    wk.add({
+    require("which-key").add({
       mode = { "n", "v" },
       { "<leader>.", group = "Find File" },
 
