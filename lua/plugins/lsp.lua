@@ -97,11 +97,6 @@ return {
         end,
       })
 
-      -- Add a border to the hover frame.
-      -- FIX: Tried to replace deprecated API, but this doesn't work.
-      -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
-      -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.hover({ border = "rounded" })
-
       vim.diagnostic.config(opts.diagnostics)
 
       -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -118,8 +113,6 @@ return {
         -- on_attach = on_attach,
       })
 
-      -- Moved out of mason_lspconfig handlers loop because diagnostics
-      -- were not being disabled.
       vim.lsp.config("jedi_language_server", {
         capabilities = capabilities,
         -- on_attach = on_attach,
