@@ -28,8 +28,8 @@ return {
       },
       -- autoformat = true,
       servers = {
-        -- clangd = {},
-        jedi_language_server = {}, -- Moved outside of loop to disable diagnostics.
+        clangd = {},
+        jedi_language_server = {},
         rnix = {},
         ruff = {},
         lua_ls = {
@@ -42,8 +42,6 @@ return {
             },
           },
         },
-        html = {},
-        cssls = {},
       },
     },
     config = function(_, opts)
