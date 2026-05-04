@@ -1,60 +1,69 @@
-local set = vim.opt
-
--- set.guicursor = "" -- thick cursor in insert mode
-
 if vim.loop.os_uname().sysname == "Linux" then
-  set.background = "dark"
+  vim.opt.background = "dark"
 elseif vim.loop.os_uname().sysname == "Darwin" then
-  set.background = "light"
+  vim.opt.background = "light"
 end
 
-set.termguicolors = true
+vim.o.showmode = false
 
-set.nu = true
-set.relativenumber = true
+vim.opt.termguicolors = true
 
-set.signcolumn = "yes"
-set.scrolloff = 3
-set.sidescrolloff = 8
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
-set.tabstop = 4
-set.softtabstop = 4
-set.shiftwidth = 4
--- set.colorcolumn = "90"
+vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 3
+vim.opt.sidescrolloff = 8
 
-set.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+-- vim.opt.colorcolumn = "90"
 
-set.virtualedit = "block"
+vim.opt.expandtab = true
 
-set.inccommand = "split"
+-- list mode shows characters for tabs and trailing whitespace.
+vim.o.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+vim.opt.virtualedit = "block"
+
+vim.opt.inccommand = "split"
 
 -- search settings
-set.hlsearch = false
-set.incsearch = true
-set.ignorecase = true
-set.smartcase = true
-set.hidden = true
+-- Clear search highlights.
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- Alternatively, turn search highlights off with:
+-- vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hidden = true
 
--- set.autoindent = true
-set.smartindent = true
+-- vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.o.breakindent = true
 
-set.backspace = "indent,eol,start"
+vim.opt.backspace = "indent,eol,start"
 
-set.iskeyword:append("-")
+vim.opt.iskeyword:append("-")
 
-set.wrap = false
+vim.opt.wrap = false
 
-set.cmdheight = 1
+vim.opt.cmdheight = 1
 
-set.showcmd = false
+vim.opt.showcmd = false
 
-set.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = "menu,menuone,noselect"
 
-set.clipboard:append("unnamedplus")
+vim.opt.clipboard:append("unnamedplus")
+
+-- Persist undo/redo history after closing a file.
+vim.o.undofile = true
 
 -- split windows
-set.splitright = true
-set.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 vim.o.updatetime = 250
 vim.o.timeout = true
