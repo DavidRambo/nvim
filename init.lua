@@ -40,19 +40,15 @@ require("config.options")
 -- [[ Keymaps ]]
 require("config.keymaps")
 
--- Enable treesitter text highlighting
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "<filetype>" },
---   callback = function()
---     vim.treesiter.start()
---   end,
--- })
-
 -- vim.diagnostic.config({
---   -- virtual_text = {
---   --   source = "always", -- Or "if_many"
---   -- },
---   float = {
---     source = "always", -- Or "if_many"
---   },
+--   update_in_insert = false,
+--   severity_sort = true,
+--   float = { border = "rounded", source = "if_many" },
+--   underline = { severity = { min = vim.diagnostic.severity.WARN } },
+
+--   -- Choose one or the other:
+--   virtual_text = true,
+--   virtual_lines = false,
+
+--   jump = { float = true },
 -- })
