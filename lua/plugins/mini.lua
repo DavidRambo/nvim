@@ -1,5 +1,5 @@
 return {
-  -- buffer remove
+  -- Remove buffers without impacting window layout.
   {
     "nvim-mini/mini.bufremove",
 		-- stylua: ignore
@@ -8,6 +8,8 @@ return {
 			{ "<leader>bD", function() require("mini.bufremove").delete(0, true) end,  desc = "Delete Buffer (Force)" },
 		},
   },
+
+  -- Bracket-based navigation keymaps.
   {
     "nvim-mini/mini.bracketed",
     config = function()
@@ -20,6 +22,7 @@ return {
     version = false,
   },
 
+  -- Move line (in normal) or selection (in visual).
   {
     "nvim-mini/mini.move",
     config = function()
@@ -34,6 +37,7 @@ return {
     end,
   },
 
+  -- gS to break arguments into multiple lines or to join into one line.
   {
     "nvim-mini/mini.splitjoin",
     version = false,
