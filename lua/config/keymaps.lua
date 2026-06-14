@@ -34,18 +34,8 @@ vim.api.nvim_set_keymap(
   { noremap = true, expr = true, silent = true }
 )
 
--- n_remap("<C-d>", "<C-d>zz")
--- n_remap("<C-u>", "<C-u>zz")
-n_remap("n", "nzzzv")
-n_remap("N", "Nzzzv")
-
 -- keep that yank for more pasting
 vim.keymap.set("x", "<leader>p", '"_dP')
-
--- from asbjornHaland by way of theprimeagen
--- yank into system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 n_remap("Q", "<nop>")
 
