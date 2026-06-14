@@ -24,7 +24,9 @@ return {
         float = {
           source = "always",
         },
-        virtual_text = false,
+        -- Choose one or the other:
+        virtual_text = true,
+        virtual_lines = false,
       },
       -- autoformat = true,
       servers = {
